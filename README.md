@@ -6,7 +6,7 @@ Gist...
 
 * [x] - Bootstrap react app.
 * [x] - Install Dependencies.
-* [ ] - Create redux store and root reducer.
+* [x] - Create redux store and root reducer.
 * [ ] - Create ShoppingCartApp container component and connect to redux store.
 * [ ] - Create app layout
   * [ ] - Add global styles.
