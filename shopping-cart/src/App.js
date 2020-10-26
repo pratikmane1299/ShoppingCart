@@ -1,7 +1,12 @@
+import GlobalStyle from './globalStyle';
+import ShoppingCartApp from "./components/ShoppingCartApp";
 
 function App() {
   return (
-      <h1>Redux Shopping Cart</h1>
+    <>
+      <GlobalStyle />
+      <ShoppingCartApp />
+    </>
   );
 }
 

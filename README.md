@@ -7,11 +7,11 @@ Gist...
 * [x] - Bootstrap react app.
 * [x] - Install Dependencies.
 * [x] - Create redux store and root reducer.
-* [ ] - Create ShoppingCartApp container component and connect to redux store.
-* [ ] - Create app layout
-  * [ ] - Add global styles.
-  * [ ] - Split view into 2 columns.
-  * [ ] - Create Header component.
+* [x] - Create ShoppingCartApp container component and connect to redux store.
+* [x] - Create app layout
+  * [x] - Add global styles.
+  * [x] - Split view into 2 columns.
+  * [x] - Create Header component.
 * [ ] - List all products.
   * [ ] - Create ProductItem component and pass product as prop.
 * [ ] - Add product to cart.
