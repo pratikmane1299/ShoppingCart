@@ -12,8 +12,8 @@ Gist...
   * [x] - Add global styles.
   * [x] - Split view into 2 columns.
   * [x] - Create Header component.
-* [ ] - List all products.
-  * [ ] - Create ProductItem component and pass product as prop.
+* [x] - List all products.
+  * [x] - Create ProductItem component and pass product as prop.
 * [ ] - Add product to cart.
   * [ ] - Create action, action creator and modify state to add product to cart.
   * [ ] - On button click, dispatch add to cart action.

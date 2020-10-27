@@ -1,10 +1,20 @@
 import React from 'react'
-import { ProductsWrapper } from './style'
+import ProductItem from '../ProductItem'
+import { ProductsTitleWrapper, ProductsWrapper, ProductsTitle, ProductsList } from './style'
 
-const Products = () => {
+const Products = ({ products }) => {
   return (
     <ProductsWrapper>
-      <h4>Products</h4>
+      <ProductsTitleWrapper>
+        <ProductsTitle>Products</ProductsTitle>
+      </ProductsTitleWrapper>
+      <ProductsList>
+        {
+          products.map(product => {
+            return <ProductItem product={product} key={product.id} />
+          })
+        }
+      </ProductsList>
     </ProductsWrapper>
   )
 }

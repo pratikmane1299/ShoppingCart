@@ -7,12 +7,12 @@ import Cart from '../Cart';
 
 import { ContentWrapper } from './style'
 
-const ShoppingCartApp = () => {
+const ShoppingCartApp = ({ products }) => {
   return (
     <>
       <Header />
       <ContentWrapper>
-        <Products />
+        <Products products={products} />
         <Cart />
       </ContentWrapper>
     </>
