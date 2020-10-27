@@ -2,7 +2,7 @@ import React from 'react'
 import ProductItem from '../ProductItem'
 import { ProductsTitleWrapper, ProductsWrapper, ProductsTitle, ProductsList } from './style'
 
-const Products = ({ products }) => {
+const Products = ({ products, addToCart }) => {
   return (
     <ProductsWrapper>
       <ProductsTitleWrapper>
@@ -10,9 +10,13 @@ const Products = ({ products }) => {
       </ProductsTitleWrapper>
       <ProductsList>
         {
-          products.map(product => {
-            return <ProductItem product={product} key={product.id} />
-          })
+          products.map(product => (
+            <ProductItem 
+              product={product} 
+              key={product.id} 
+              onAddToCart={() => addToCart(product)} 
+            />
+          ))
         }
       </ProductsList>
     </ProductsWrapper>

@@ -14,9 +14,9 @@ Gist...
   * [x] - Create Header component.
 * [x] - List all products.
   * [x] - Create ProductItem component and pass product as prop.
-* [ ] - Add product to cart.
-  * [ ] - Create action, action creator and modify state to add product to cart.
-  * [ ] - On button click, dispatch add to cart action.
+* [x] - Add product to cart.
+  * [x] - Create action, action creator and modify state to add product to cart.
+  * [x] - On button click, dispatch add to cart action.
 * [ ] - Display all cart items
   * [ ] Create CartItem component and pass product as prop.
   * [ ] Display total price.

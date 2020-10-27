@@ -2,7 +2,7 @@ import React from 'react'
 
 import { ProductWrapper, ProductImageWrapper, Image, ProductInfo, ProductName, ProductPrice, AddToCartBtn } from './style'
 
-const ProductItem = ({ product }) => {
+const ProductItem = ({ product, onAddToCart }) => {
   return (
     <ProductWrapper>
       <ProductImageWrapper>
@@ -11,7 +11,7 @@ const ProductItem = ({ product }) => {
       <ProductInfo>
         <ProductName>{product.name}</ProductName>
         <ProductPrice>&#8377;{product.price}</ProductPrice>
-        <AddToCartBtn>add to basket</AddToCartBtn>
+        <AddToCartBtn onClick={onAddToCart}>add to basket</AddToCartBtn>
       </ProductInfo>
     </ProductWrapper>
   )
