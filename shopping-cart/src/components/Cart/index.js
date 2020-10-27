@@ -1,13 +1,31 @@
-import React from 'react'
+import React from 'react';
 
-import { CartWrapper } from './style'
+import CartItem from '../CartItem';
 
-const Cart = () => {
+import {
+  CartWrapper,
+  CartTitle,
+  CartItemList,
+  EmpytCartMessage,
+  CartTotalWrapper
+} from './style';
+
+const Cart = ({ cartItems }) => {
   return (
     <CartWrapper>
-      <h4>Cart</h4>
+      <CartTitle>My Basket</CartTitle>
+      {cartItems.length > 0 ? (
+        <>
+          <CartItemList>
+          {cartItems.map((item) => (
+            <CartItem item={item} key={item.id} />
+          ))}
+          </CartItemList>
+          <CartTotalWrapper>Total &#8377; {cartItems.reduce((a, item) => a + item.price * item.quantity, 0)}</CartTotalWrapper>
+        </>
+      ) : <EmpytCartMessage>Your basket is Empty</EmpytCartMessage> }
     </CartWrapper>
-  )
-}
+  );
+};
 
-export default Cart
+export default Cart;

@@ -17,9 +17,9 @@ Gist...
 * [x] - Add product to cart.
   * [x] - Create action, action creator and modify state to add product to cart.
   * [x] - On button click, dispatch add to cart action.
-* [ ] - Display all cart items
-  * [ ] Create CartItem component and pass product as prop.
-  * [ ] Display total price.
+* [x] - Display all cart items
+  * [x] Create CartItem component and pass product as prop.
+  * [x] Display total price.
 * [ ] - Increase/Decrease quantity.
   * [ ] - Add <code>+</code> and <code>-</code> buttons in CartItem component
   * [ ] - Create action, action creator and modify state to increase/decrease quantity.

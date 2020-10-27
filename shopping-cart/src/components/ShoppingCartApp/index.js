@@ -9,13 +9,13 @@ import Cart from '../Cart';
 
 import { ContentWrapper } from './style'
 
-const ShoppingCartApp = ({ products, addToCart }) => {
+const ShoppingCartApp = ({ products, addToCart, cart }) => {
   return (
     <>
       <Header />
       <ContentWrapper>
         <Products products={products} addToCart={addToCart} />
-        <Cart />
+        <Cart cartItems={cart} />
       </ContentWrapper>
     </>
   )
