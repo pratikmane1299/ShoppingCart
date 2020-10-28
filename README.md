@@ -24,7 +24,7 @@ Gist...
   * [x] - Add <code>+</code> and <code>-</code> buttons in CartItem component
   * [x] - Create action, action creator and modify state to increase/decrease quantity.
   * [x] - On <code>+</code> / <code>-</code> buttons click, dispatch action to increase/decrease quantity of a product.
-* [ ] - Remove product from cart.
-  * [ ] - Add remove button on CartItem component.
-  * [ ] - Create action, action creator and modify state to remove product to cart.
-  * [ ] - On button click, dispatch remove from cart action.
+* [x] - Remove product from cart.
+  * [x] - Add remove button on CartItem component.
+  * [x] - Create action, action creator and modify state to remove product to cart.
+  * [x] - On button click, dispatch remove from cart action.

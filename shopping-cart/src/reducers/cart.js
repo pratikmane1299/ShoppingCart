@@ -1,6 +1,7 @@
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const INCREASE_QUANTITY = 'INCREASE_QUANTITY';
 export const DECREASE_QUANTITY = 'DECREASE_QUANTITY';
+export const REMOVE_CART_ITEM = 'REMOVE_CART_ITEM';
 
 const initialState = {
   items: []
@@ -23,6 +24,13 @@ export const increaseQuantity = (product) => {
 export const decreaseQuantity = (product) => {
   return {
     type: DECREASE_QUANTITY,
+    payload: product
+  }
+}
+
+export const removeCartItem = (product) => {
+  return {
+    type: REMOVE_CART_ITEM,
     payload: product
   }
 }
@@ -81,6 +89,10 @@ export default function cartReducer(state = initialState, action) {
         return {
           items: state.items.filter(item => item.id !== action.payload.id)
         }
+      }
+    case REMOVE_CART_ITEM:
+      return {
+        items: state.items.filter(item => item.id !== action.payload.id)
       }
 
     default:

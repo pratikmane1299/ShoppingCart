@@ -10,7 +10,12 @@ import {
   CartTotalWrapper
 } from './style';
 
-const Cart = ({ cartItems, increaseQuantity, decreaseQuantity }) => {
+const Cart = ({ 
+  cartItems,
+  increaseQuantity,
+  decreaseQuantity,
+  removeCartItem
+}) => {
   return (
     <CartWrapper>
       <CartTitle>My Basket</CartTitle>
@@ -23,6 +28,7 @@ const Cart = ({ cartItems, increaseQuantity, decreaseQuantity }) => {
               key={item.id} 
               onIncreaseQuantity={() => increaseQuantity(item)}
               onDecreaseQuantity={() => decreaseQuantity(item)}
+              onRemoveCartItem={() => removeCartItem(item)}
             />
           ))}
           </CartItemList>
