@@ -15,7 +15,7 @@ import {
   RemoveFromCartBtn,
 } from "./style";
 
-const CartItem = ({ item }) => {
+const CartItem = ({ item, onIncreaseQuantity, onDecreaseQuantity }) => {
   return (
     <CartItemWrapper key={item.id}>
       <CartItemImageWrapper>
@@ -25,11 +25,11 @@ const CartItem = ({ item }) => {
         <CartItemProductName>{item.name}</CartItemProductName>
         <CartPriceDetailsWrapper>
           <CartItemProductPrice>&#8377;{item.price} X </CartItemProductPrice>
-          <IconBtn>
+          <IconBtn onClick={onDecreaseQuantity}>
             <FontAwesomeIcon icon={faMinus} />
           </IconBtn>
           <CartItemQty>{item.quantity}</CartItemQty>
-          <IconBtn>
+          <IconBtn onClick={onIncreaseQuantity}>
             <FontAwesomeIcon icon={faPlus} />
           </IconBtn>
         </CartPriceDetailsWrapper>

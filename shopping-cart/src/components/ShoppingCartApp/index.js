@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { addToCart } from '../../reducers/';
+import { addToCart, increaseQuantity, decreaseQuantity } from '../../reducers/';
 
 import Header from '../Header'
 import Products from '../Products';
@@ -9,13 +9,17 @@ import Cart from '../Cart';
 
 import { ContentWrapper } from './style'
 
-const ShoppingCartApp = ({ products, addToCart, cart }) => {
+const ShoppingCartApp = ({ products, addToCart, cart, increaseQuantity, decreaseQuantity }) => {
   return (
     <>
       <Header />
       <ContentWrapper>
         <Products products={products} addToCart={addToCart} />
-        <Cart cartItems={cart} />
+        <Cart 
+          cartItems={cart} 
+          increaseQuantity={increaseQuantity} 
+          decreaseQuantity={decreaseQuantity} 
+        />
       </ContentWrapper>
     </>
   )
@@ -28,5 +32,5 @@ const mapStateToProps = (state) => ({
 
 export default connect(
   mapStateToProps,
-  { addToCart }
+  { addToCart, increaseQuantity, decreaseQuantity }
 )(ShoppingCartApp);

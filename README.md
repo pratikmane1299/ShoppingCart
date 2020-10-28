@@ -20,10 +20,10 @@ Gist...
 * [x] - Display all cart items
   * [x] Create CartItem component and pass product as prop.
   * [x] Display total price.
-* [ ] - Increase/Decrease quantity.
-  * [ ] - Add <code>+</code> and <code>-</code> buttons in CartItem component
-  * [ ] - Create action, action creator and modify state to increase/decrease quantity.
-  * [ ] - On <code>+</code> / <code>-</code> buttons click, dispatch action to increase/decrease quantity of a product.
+* [x] - Increase/Decrease quantity.
+  * [x] - Add <code>+</code> and <code>-</code> buttons in CartItem component
+  * [x] - Create action, action creator and modify state to increase/decrease quantity.
+  * [x] - On <code>+</code> / <code>-</code> buttons click, dispatch action to increase/decrease quantity of a product.
 * [ ] - Remove product from cart.
   * [ ] - Add remove button on CartItem component.
   * [ ] - Create action, action creator and modify state to remove product to cart.
