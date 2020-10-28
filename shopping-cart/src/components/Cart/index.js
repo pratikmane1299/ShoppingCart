@@ -7,14 +7,14 @@ import {
   CartTitle,
   CartItemList,
   EmpytCartMessage,
-  CartTotalWrapper
+  CartTotalWrapper,
 } from './style';
 
-const Cart = ({ 
+const Cart = ({
   cartItems,
   increaseQuantity,
   decreaseQuantity,
-  removeCartItem
+  removeCartItem,
 }) => {
   return (
     <CartWrapper>
@@ -22,19 +22,24 @@ const Cart = ({
       {cartItems.length > 0 ? (
         <>
           <CartItemList>
-          {cartItems.map((item) => (
-            <CartItem 
-              item={item} 
-              key={item.id} 
-              onIncreaseQuantity={() => increaseQuantity(item)}
-              onDecreaseQuantity={() => decreaseQuantity(item)}
-              onRemoveCartItem={() => removeCartItem(item)}
-            />
-          ))}
+            {cartItems.map((item) => (
+              <CartItem
+                item={item}
+                key={item.id}
+                onIncreaseQuantity={() => increaseQuantity(item)}
+                onDecreaseQuantity={() => decreaseQuantity(item)}
+                onRemoveCartItem={() => removeCartItem(item)}
+              />
+            ))}
           </CartItemList>
-          <CartTotalWrapper>Total &#8377; {cartItems.reduce((a, item) => a + item.price * item.quantity, 0)}</CartTotalWrapper>
+          <CartTotalWrapper>
+            Total &#8377;{" "}
+            {cartItems.reduce((a, item) => a + item.price * item.quantity, 0)}
+          </CartTotalWrapper>
         </>
-      ) : <EmpytCartMessage>Your basket is Empty</EmpytCartMessage> }
+      ) : (
+        <EmpytCartMessage>Your basket is Empty</EmpytCartMessage>
+      )}
     </CartWrapper>
   );
 };

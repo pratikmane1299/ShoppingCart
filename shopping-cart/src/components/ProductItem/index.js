@@ -1,6 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-import { ProductWrapper, ProductImageWrapper, Image, ProductInfo, ProductName, ProductPrice, AddToCartBtn } from './style'
+import {
+  ProductWrapper,
+  ProductImageWrapper,
+  Image,
+  ProductInfo,
+  ProductName,
+  ProductPrice,
+  AddToCartBtn,
+} from './style';
 
 const ProductItem = ({ product, onAddToCart }) => {
   return (
@@ -14,7 +22,7 @@ const ProductItem = ({ product, onAddToCart }) => {
         <AddToCartBtn onClick={onAddToCart}>add to basket</AddToCartBtn>
       </ProductInfo>
     </ProductWrapper>
-  )
-}
+  );
+};
 
-export default ProductItem
+export default ProductItem;

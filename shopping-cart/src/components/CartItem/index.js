@@ -19,7 +19,7 @@ const CartItem = ({
   item,
   onIncreaseQuantity,
   onDecreaseQuantity,
-  onRemoveCartItem
+  onRemoveCartItem,
 }) => {
   return (
     <CartItemWrapper key={item.id}>

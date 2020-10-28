@@ -1,6 +1,13 @@
-import React from 'react'
-import ProductItem from '../ProductItem'
-import { ProductsTitleWrapper, ProductsWrapper, ProductsTitle, ProductsList } from './style'
+import React from 'react';
+
+import ProductItem from '../ProductItem';
+
+import {
+  ProductsTitleWrapper,
+  ProductsWrapper,
+  ProductsTitle,
+  ProductsList,
+} from './style';
 
 const Products = ({ products, addToCart }) => {
   return (
@@ -9,18 +16,16 @@ const Products = ({ products, addToCart }) => {
         <ProductsTitle>Products</ProductsTitle>
       </ProductsTitleWrapper>
       <ProductsList>
-        {
-          products.map(product => (
-            <ProductItem 
-              product={product} 
-              key={product.id} 
-              onAddToCart={() => addToCart(product)} 
-            />
-          ))
-        }
+        {products.map((product) => (
+          <ProductItem
+            product={product}
+            key={product.id}
+            onAddToCart={() => addToCart(product)}
+          />
+        ))}
       </ProductsList>
     </ProductsWrapper>
-  )
-}
+  );
+};
 
-export default Products
+export default Products;
