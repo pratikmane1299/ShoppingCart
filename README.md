@@ -32,3 +32,7 @@ Gist...
   * [x] - Add remove button on CartItem component.
   * [x] - Create action, action creator and modify state to remove product to cart.
   * [x] - On button click, dispatch remove from cart action.
+
+# License
+
+The project is licensed under the MIT license. Read [license](./LICENSE) for more information.
