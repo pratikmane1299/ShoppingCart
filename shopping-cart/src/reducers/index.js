@@ -7,7 +7,7 @@ import {
   removeCartItem,
 } from './cart';
 
-import products from './products';
+import products, { fetchProducts } from './products';
 import cart from './cart';
 
 export default combineReducers({
@@ -15,4 +15,4 @@ export default combineReducers({
   cart
 });
 
-export { addToCart, increaseQuantity, decreaseQuantity, removeCartItem };
+export { fetchProducts, addToCart, increaseQuantity, decreaseQuantity, removeCartItem };

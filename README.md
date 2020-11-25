@@ -36,7 +36,7 @@ Gist...
 Connect to backend.
 
 * [x] - Install redux-thunk and add thunk middleware to store.
-* [ ] - Fetch products from backend.
+* [x] - Fetch products from backend.
 * [ ] - Add item to cart and save in database.
 * [ ] - Get cart details from backend.
 * [ ] - Increase/decrease item quantity.

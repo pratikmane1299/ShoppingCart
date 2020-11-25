@@ -14,7 +14,7 @@ const ProductItem = ({ product, onAddToCart }) => {
   return (
     <ProductWrapper>
       <ProductImageWrapper>
-        <Image src={product.image} alt={product.name} />
+        <Image src={product.image_url} alt={product.name} />
       </ProductImageWrapper>
       <ProductInfo>
         <ProductName>{product.name}</ProductName>

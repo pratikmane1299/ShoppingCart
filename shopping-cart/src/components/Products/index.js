@@ -9,21 +9,25 @@ import {
   ProductsList,
 } from './style';
 
-const Products = ({ products, addToCart }) => {
+const Products = ({ products, loading, addToCart }) => {
   return (
     <ProductsWrapper>
       <ProductsTitleWrapper>
         <ProductsTitle>Products</ProductsTitle>
       </ProductsTitleWrapper>
-      <ProductsList>
-        {products.map((product) => (
-          <ProductItem
-            product={product}
-            key={product.id}
-            onAddToCart={() => addToCart(product)}
-          />
-        ))}
-      </ProductsList>
+      {loading ? (
+        <h3>Loading..., Please Wait!</h3>
+      ) : (
+        <ProductsList>
+          {products.map((product) => (
+            <ProductItem
+              product={product}
+              key={product.id}
+              onAddToCart={() => addToCart(product)}
+            />
+          ))}
+        </ProductsList>
+      )}
     </ProductsWrapper>
   );
 };
