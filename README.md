@@ -33,6 +33,15 @@ Gist...
   * [x] - Create action, action creator and modify state to remove product to cart.
   * [x] - On button click, dispatch remove from cart action.
 
+Connect to backend.
+
+* [ ] - Install redux-thunk and add thunk middleware to store.
+* [ ] - Fetch products from backend.
+* [ ] - Add item to cart and save in database.
+* [ ] - Get cart details from backend.
+* [ ] - Increase/decrease item quantity.
+* [ ] - Remove item from cart.
+
 # License
 
 The project is licensed under the MIT license. Read [license](./LICENSE) for more information.
