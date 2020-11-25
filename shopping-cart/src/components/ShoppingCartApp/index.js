@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import {
   fetchProducts,
+  fetchCartDetails,
   addToCart,
   increaseQuantity,
   decreaseQuantity,
@@ -19,8 +20,10 @@ const ShoppingCartApp = ({
   products,
   isloadingProducts,
   fetchProducts,
-  addToCart,
   cart,
+  isCartLoading,
+  fetchCartDetails,
+  addToCart,
   increaseQuantity,
   decreaseQuantity,
   removeCartItem,
@@ -28,7 +31,8 @@ const ShoppingCartApp = ({
 
   useEffect(() => {
     fetchProducts();
-  }, [fetchProducts])
+    fetchCartDetails();
+  }, [fetchCartDetails, fetchProducts])
 
   return (
     <>
@@ -37,6 +41,7 @@ const ShoppingCartApp = ({
         <Products products={products} loading={isloadingProducts} addToCart={addToCart} />
         <Cart
           cartItems={cart}
+          loading={isCartLoading}
           increaseQuantity={increaseQuantity}
           decreaseQuantity={decreaseQuantity}
           removeCartItem={removeCartItem}
@@ -49,11 +54,13 @@ const ShoppingCartApp = ({
 const mapStateToProps = (state) => ({
   products: state.products.products,
   isloadingProducts: state.products.loading,
-  cart: state.cart.items
+  cart: state.cart.items,
+  isCartLoading: state.cart.loading
 });
 
 export default connect(mapStateToProps, {
   fetchProducts,
+  fetchCartDetails,
   addToCart,
   increaseQuantity,
   decreaseQuantity,

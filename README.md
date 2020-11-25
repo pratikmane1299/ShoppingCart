@@ -37,8 +37,8 @@ Connect to backend.
 
 * [x] - Install redux-thunk and add thunk middleware to store.
 * [x] - Fetch products from backend.
+* [x] - Get cart details from backend.
 * [ ] - Add item to cart and save in database.
-* [ ] - Get cart details from backend.
 * [ ] - Increase/decrease item quantity.
 * [ ] - Remove item from cart.
 

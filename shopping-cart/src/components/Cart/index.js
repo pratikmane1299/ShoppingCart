@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import CartItem from '../CartItem';
+import CartItem from "../CartItem";
 
 import {
   CartWrapper,
@@ -8,18 +8,19 @@ import {
   CartItemList,
   EmpytCartMessage,
   CartTotalWrapper,
-} from './style';
+} from "./style";
 
 const Cart = ({
   cartItems,
+  loading,
   increaseQuantity,
   decreaseQuantity,
   removeCartItem,
 }) => {
-  return (
-    <CartWrapper>
-      <CartTitle>My Basket</CartTitle>
-      {cartItems.length > 0 ? (
+  const renderCart = () => {
+    if (loading) return <h3>Loading..., Please Wait!</h3>;
+    if (cartItems.length > 0) {
+      return (
         <>
           <CartItemList>
             {cartItems.map((item) => (
@@ -37,9 +38,16 @@ const Cart = ({
             {cartItems.reduce((a, item) => a + item.price * item.quantity, 0)}
           </CartTotalWrapper>
         </>
-      ) : (
-        <EmpytCartMessage>Your basket is Empty</EmpytCartMessage>
-      )}
+      );
+    } else {
+      return <EmpytCartMessage>Your basket is Empty</EmpytCartMessage>;
+    }
+  };
+
+  return (
+    <CartWrapper>
+      <CartTitle>My Basket</CartTitle>
+      {renderCart()}
     </CartWrapper>
   );
 };

@@ -1,10 +1,32 @@
+import { getCart } from "../API";
+
+export const REQUEST_CART_DETAILS = 'REQUEST_CART_DETAILS';
+export const RECIEVE_CART_DETAILS = 'RECIEVE_CART_DETAILS';
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const INCREASE_QUANTITY = 'INCREASE_QUANTITY';
 export const DECREASE_QUANTITY = 'DECREASE_QUANTITY';
 export const REMOVE_CART_ITEM = 'REMOVE_CART_ITEM';
 
 const initialState = {
-  items: []
+  items: [],
+  loading: false
+}
+
+function requestCartDetails() {
+  return { type: REQUEST_CART_DETAILS };
+}
+
+function recieveCartDetails(items) {
+  return { type: RECIEVE_CART_DETAILS, payload: items }
+}
+
+export function fetchCartDetails() {
+  return async (dispatch) => {
+    dispatch(requestCartDetails());
+
+    const response = await getCart();
+    dispatch(recieveCartDetails(response.data));
+  }
 }
 
 export const addToCart = (product) => {
@@ -37,6 +59,12 @@ export const removeCartItem = (product) => {
 
 export default function cartReducer(state = initialState, action) {
   switch (action.type) {
+    case REQUEST_CART_DETAILS:
+      return { ...state, loading: true };
+
+    case RECIEVE_CART_DETAILS:
+    return { ...state, loading: false, items: action.payload }
+
     case ADD_TO_CART:
       const product = state.items.some(p => p.id === action.payload.id);
       if (product) {

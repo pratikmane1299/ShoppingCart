@@ -24,7 +24,7 @@ const CartItem = ({
   return (
     <CartItemWrapper key={item.id}>
       <CartItemImageWrapper>
-        <CartItemImage src={item.image} alt={item.name} />
+        <CartItemImage src={item.image_url} alt={item.name} />
       </CartItemImageWrapper>
       <CartItemDetails>
         <CartItemProductName>{item.name}</CartItemProductName>
