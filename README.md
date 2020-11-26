@@ -39,7 +39,7 @@ Connect to backend.
 * [x] - Fetch products from backend.
 * [x] - Get cart details from backend.
 * [x] - Add item to cart and save in database.
-* [ ] - Increase/decrease item quantity.
+* [x] - Increase/decrease item quantity.
 * [ ] - Remove item from cart.
 
 # License

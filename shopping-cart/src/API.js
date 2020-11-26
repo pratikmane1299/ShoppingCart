@@ -16,3 +16,11 @@ export function getCart() {
 export function addItemToCart(productId) {
   return axios.post(`${BASE_URL}cart/add-to-cart`, { userId, productId });
 }
+
+export function increaseQty(productId) {
+  return axios.put(`${BASE_URL}cart/increase-qty`, { userId, productId });
+}
+
+export function decreaseQty(productId) {
+  return axios.put(`${BASE_URL}cart/decrease-qty`, { userId, productId });
+}

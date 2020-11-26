@@ -27,8 +27,8 @@ const Cart = ({
               <CartItem
                 item={item}
                 key={item.id}
-                onIncreaseQuantity={() => increaseQuantity(item)}
-                onDecreaseQuantity={() => decreaseQuantity(item)}
+                onIncreaseQuantity={() => increaseQuantity(item.id)}
+                onDecreaseQuantity={() => decreaseQuantity(item.id)}
                 onRemoveCartItem={() => removeCartItem(item)}
               />
             ))}
