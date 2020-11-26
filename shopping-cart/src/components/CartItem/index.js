@@ -30,11 +30,11 @@ const CartItem = ({
         <CartItemProductName>{item.name}</CartItemProductName>
         <CartPriceDetailsWrapper>
           <CartItemProductPrice>&#8377;{item.price} X </CartItemProductPrice>
-          <IconBtn onClick={onDecreaseQuantity}>
+          <IconBtn disabled={item.quantity <= 1} onClick={onDecreaseQuantity}>
             <FontAwesomeIcon icon={faMinus} />
           </IconBtn>
           <CartItemQty>{item.quantity}</CartItemQty>
-          <IconBtn onClick={onIncreaseQuantity}>
+          <IconBtn disabled={item.quantity >= 10} onClick={onIncreaseQuantity}>
             <FontAwesomeIcon icon={faPlus} />
           </IconBtn>
         </CartPriceDetailsWrapper>
