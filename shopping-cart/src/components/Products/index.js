@@ -23,7 +23,7 @@ const Products = ({ products, loading, addToCart }) => {
             <ProductItem
               product={product}
               key={product.id}
-              onAddToCart={() => addToCart(product)}
+              onAddToCart={() => addToCart(product.id)}
             />
           ))}
         </ProductsList>

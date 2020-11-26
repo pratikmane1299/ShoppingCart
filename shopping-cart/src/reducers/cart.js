@@ -1,8 +1,8 @@
-import { getCart } from "../API";
+import { getCart, addItemToCart } from "../API";
 
 export const REQUEST_CART_DETAILS = 'REQUEST_CART_DETAILS';
 export const RECIEVE_CART_DETAILS = 'RECIEVE_CART_DETAILS';
-export const ADD_TO_CART = 'ADD_TO_CART';
+export const ADD_TO_CART_SUCCESS = 'ADD_TO_CART_SUCCESS';
 export const INCREASE_QUANTITY = 'INCREASE_QUANTITY';
 export const DECREASE_QUANTITY = 'DECREASE_QUANTITY';
 export const REMOVE_CART_ITEM = 'REMOVE_CART_ITEM';
@@ -29,10 +29,15 @@ export function fetchCartDetails() {
   }
 }
 
-export const addToCart = (product) => {
-  return {
-    type: ADD_TO_CART,
-    payload: product
+function addToCartSuccess(product) {
+  return { type: ADD_TO_CART_SUCCESS, payload: product };
+}
+
+export const addToCart = (productId) => {
+  return async (dispatch) => {
+    const response = await addItemToCart(productId);
+
+    dispatch(addToCartSuccess(response.data));
   }
 }
 
@@ -65,16 +70,13 @@ export default function cartReducer(state = initialState, action) {
     case RECIEVE_CART_DETAILS:
     return { ...state, loading: false, items: action.payload }
 
-    case ADD_TO_CART:
+    case ADD_TO_CART_SUCCESS:
       const product = state.items.some(p => p.id === action.payload.id);
       if (product) {
         return {
           items: state.items.map(item => {
             if (item.id === action.payload.id) {
-              return {
-                ...item,
-                quantity: item.quantity + 1
-              }
+              return action.payload
             }
 
             return item;
@@ -82,8 +84,9 @@ export default function cartReducer(state = initialState, action) {
         }
       }
       return {
-        items: [...state.items, { ...action.payload, quantity: 1 }]
+        items: [...state.items, action.payload ]
       }
+
     case INCREASE_QUANTITY:
       return {
         items: state.items.map(item => {

@@ -12,3 +12,7 @@ export function getAllProducts() {
 export function getCart() {
   return  axios.get(`${BASE_URL}cart/${userId}`);
 }
+
+export function addItemToCart(productId) {
+  return axios.post(`${BASE_URL}cart/add-to-cart`, { userId, productId });
+}
