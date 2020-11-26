@@ -24,3 +24,7 @@ export function increaseQty(productId) {
 export function decreaseQty(productId) {
   return axios.put(`${BASE_URL}cart/decrease-qty`, { userId, productId });
 }
+
+export function removeItem(productId) {
+  return axios.delete(`${BASE_URL}cart/delete-item`, { data: { userId, productId }});
+}

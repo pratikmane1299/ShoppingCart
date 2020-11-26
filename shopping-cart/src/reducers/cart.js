@@ -1,11 +1,11 @@
-import { getCart, addItemToCart, increaseQty, decreaseQty } from "../API";
+import { getCart, addItemToCart, increaseQty, decreaseQty, removeItem } from "../API";
 
 export const REQUEST_CART_DETAILS = 'REQUEST_CART_DETAILS';
 export const RECIEVE_CART_DETAILS = 'RECIEVE_CART_DETAILS';
 export const ADD_TO_CART_SUCCESS = 'ADD_TO_CART_SUCCESS';
 export const INCREASE_QUANTITY_SUCCESS = 'INCREASE_QUANTITY_SUCCESS';
 export const DECREASE_QUANTITY_SUCCESS = 'DECREASE_QUANTITY_SUCCESS';
-export const REMOVE_CART_ITEM = 'REMOVE_CART_ITEM';
+export const REMOVE_CART_ITEM_SUCCESS = 'REMOVE_CART_ITEM_SUCCESS';
 
 const initialState = {
   items: [],
@@ -65,10 +65,17 @@ export const decreaseQuantity = (productId) => {
   }
 }
 
-export const removeCartItem = (product) => {
-  return {
-    type: REMOVE_CART_ITEM,
-    payload: product
+function removeItemSuccess(product) {
+  return { type: REMOVE_CART_ITEM_SUCCESS, payload: product }
+}
+
+export const removeCartItem = (productId) => {
+  return async (dispatch) => {
+    const response = await removeItem(productId);
+
+    console.log(response);
+
+    dispatch(removeItemSuccess(response.data));
   }
 }
 
@@ -119,7 +126,7 @@ export default function cartReducer(state = initialState, action) {
         })
       }
 
-    case REMOVE_CART_ITEM:
+    case REMOVE_CART_ITEM_SUCCESS:
       return {
         items: state.items.filter(item => item.id !== action.payload.id)
       }

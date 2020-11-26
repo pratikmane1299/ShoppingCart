@@ -29,7 +29,7 @@ const Cart = ({
                 key={item.id}
                 onIncreaseQuantity={() => increaseQuantity(item.id)}
                 onDecreaseQuantity={() => decreaseQuantity(item.id)}
-                onRemoveCartItem={() => removeCartItem(item)}
+                onRemoveCartItem={() => removeCartItem(item.id)}
               />
             ))}
           </CartItemList>
