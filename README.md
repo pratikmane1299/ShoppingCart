@@ -2,9 +2,9 @@
 
 Shopping Cart app with react and redux.
 
-# Demo
+# Backend
 
-https://redux-shopping-basket.netlify.app/
+[Here](https://github.com/pratikmane1299/shopping-cart-api)
 
 Gist...
 
