@@ -1,6 +1,10 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:4242/api/v1/';
+const isProduction = process.env.NODE_ENV === 'production';
+
+const BASE_URL = isProduction
+  ? 'https://redux-shopping-cart-api.herokuapp.com/api/v1/'
+  : 'http://localhost:4242/api/v1/';
 
 // TODO: implement authentication
 const userId = 1;
