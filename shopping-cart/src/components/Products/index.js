@@ -9,7 +9,7 @@ import {
   ProductsList,
 } from './style';
 
-const Products = ({ products, loading, addToCart }) => {
+const Products = ({ products, loading, addToCart, isAuthenticated }) => {
   return (
     <ProductsWrapper>
       <ProductsTitleWrapper>
@@ -24,6 +24,7 @@ const Products = ({ products, loading, addToCart }) => {
               product={product}
               key={product.id}
               onAddToCart={() => addToCart(product.id)}
+              isAuthenticated={isAuthenticated}
             />
           ))}
         </ProductsList>

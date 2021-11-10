@@ -10,7 +10,6 @@ import {
   removeCartItem,
 } from '../../reducers/';
 
-import Header from '../Header';
 import Products from '../Products';
 import Cart from '../Cart';
 
@@ -22,6 +21,7 @@ const ShoppingCartApp = ({
   fetchProducts,
   cart,
   isCartLoading,
+  isAuthenticated,
   fetchCartDetails,
   addToCart,
   increaseQuantity,
@@ -31,14 +31,21 @@ const ShoppingCartApp = ({
 
   useEffect(() => {
     fetchProducts();
-    fetchCartDetails();
-  }, [fetchCartDetails, fetchProducts])
+    if (isAuthenticated) {
+      fetchCartDetails();
+    }
+  }, [fetchCartDetails, fetchProducts, isAuthenticated])
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <ContentWrapper>
-        <Products products={products} loading={isloadingProducts} addToCart={addToCart} />
+        <Products 
+          products={products} 
+          loading={isloadingProducts} 
+          addToCart={addToCart} 
+          isAuthenticated={isAuthenticated} 
+        />
         <Cart
           cartItems={cart}
           loading={isCartLoading}
@@ -55,7 +62,8 @@ const mapStateToProps = (state) => ({
   products: state.products.products,
   isloadingProducts: state.products.loading,
   cart: state.cart.items,
-  isCartLoading: state.cart.loading
+  isCartLoading: state.cart.loading,
+  isAuthenticated: state.auth.isAuthenticated,
 });
 
 export default connect(mapStateToProps, {

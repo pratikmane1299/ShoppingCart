@@ -4,6 +4,8 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -18,9 +20,20 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <App />
+      <ToastContainer
+        autoClose
+        draggable={false}
+        position="top-right"
+        closeOnClick
+        rtl={false}
+        pauseOnHover
+        pauseOnFocusLoss
+        hideProgressBar={false} 
+        theme="colored"
+      ></ToastContainer>
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

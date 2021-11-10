@@ -73,8 +73,6 @@ export const removeCartItem = (productId) => {
   return async (dispatch) => {
     const response = await removeItem(productId);
 
-    console.log(response);
-
     dispatch(removeItemSuccess(response.data));
   }
 }

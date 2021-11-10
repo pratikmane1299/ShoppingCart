@@ -12,6 +12,7 @@ export const HeaderWrapper = styled(Container)`
   position: sticky;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 `;
 
 export const Title = styled.h3`
